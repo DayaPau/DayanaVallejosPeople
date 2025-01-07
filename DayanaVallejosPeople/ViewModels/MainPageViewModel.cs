@@ -100,7 +100,7 @@ public class MainPageViewModel : BaseViewModel
                 People.Add(person);
             }
 
-            StatusMessage = $"Retrieved {peopleList.Count} people.";
+            StatusMessage = $"Recuperado {peopleList.Count} persona/s.";
         }
         catch (Exception ex)
         {
