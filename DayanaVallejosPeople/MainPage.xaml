@@ -1,0 +1,94 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DayanaVallejosPeople"
+             x:Class="DayanaVallejosPeople.MainPage"
+             BackgroundColor="#f3f3f3">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Tarjeta personalizada -->
+            <Frame x:Name="dvallejos_card"
+                   BackgroundColor="#ffffff"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="10"
+                   Margin="0,0,0,10">
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <!-- Foto -->
+                    <Image x:Name="dvallejos_image"
+                           Source="dayana_vallejos.jpg"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           Aspect="AspectFill"
+                           VerticalOptions="Center" />
+
+                    <!-- Información -->
+                    <StackLayout VerticalOptions="Center">
+                        <Label x:Name="dvallejos_name_label"
+                               Text="Dayana Vallejos"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#333333" />
+                        <Label x:Name="dvallejos_age_label"
+                               Text="20 años"
+                               FontSize="16"
+                               TextColor="#666666" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Campo de entrada -->
+            <Entry x:Name="dvallejos_new_person_entry" 
+                   Placeholder="Ingresa un nombre" 
+                   BackgroundColor="#ffffff" 
+                   Margin="0,0,0,10" />
+
+            <!-- Botones -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Button x:Name="dvallejos_add_button"
+                        Text="Agregar Persona" 
+                        Command="{Binding AddPersonCommand}" 
+                        HorizontalOptions="Center" 
+                        Clicked="OnNewButtonClicked" 
+                        BackgroundColor="#007AFF" 
+                        TextColor="White" 
+                        CornerRadius="5" />
+                <Button x:Name="dvallejos_get_button"
+                        Text="Obtener Personas" 
+                        Command="{Binding RefreshPeopleCommand}" 
+                        HorizontalOptions="Center" 
+                        BackgroundColor="#34C759" 
+                        TextColor="White" 
+                        CornerRadius="5" />
+            </StackLayout>
+
+            <!-- Mensaje de estado -->
+            <Label x:Name="dvallejos_status_message"
+                   Text="{Binding StatusMessage}" 
+                   FontSize="14"
+                   TextColor="Red"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="EndAndExpand" />
+
+            <!-- ListView -->
+            <ListView x:Name="dvallejos_people_list"
+                      ItemsSource="{Binding People}" 
+                      SelectionMode="Single" 
+                      ItemSelected="OnItemSelected"
+                      BackgroundColor="#ffffff" 
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
+
+
+
