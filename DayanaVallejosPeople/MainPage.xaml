@@ -7,7 +7,7 @@
     <ScrollView>
         <StackLayout Padding="20" Spacing="15">
 
-            <!-- Tarjeta personalizada -->
+            
             <Frame x:Name="dvallejos_card"
                    BackgroundColor="#ffffff"
                    CornerRadius="10"
@@ -15,7 +15,7 @@
                    Padding="10"
                    Margin="0,0,0,10">
                 <StackLayout Orientation="Horizontal" Spacing="15">
-                    <!-- Foto -->
+                    
                     <Image x:Name="dvallejos_image"
                            Source="dayana_vallejos.jpg"
                            WidthRequest="100"
@@ -23,7 +23,7 @@
                            Aspect="AspectFill"
                            VerticalOptions="Center" />
 
-                    <!-- Información -->
+                    
                     <StackLayout VerticalOptions="Center">
                         <Label x:Name="dvallejos_name_label"
                                Text="Dayana Vallejos"
@@ -38,13 +38,13 @@
                 </StackLayout>
             </Frame>
 
-            <!-- Campo de entrada -->
+            
             <Entry x:Name="dvallejos_new_person_entry" 
                    Placeholder="Ingresa un nombre" 
                    BackgroundColor="#ffffff" 
                    Margin="0,0,0,10" />
 
-            <!-- Botones -->
+            
             <StackLayout Orientation="Horizontal" Spacing="10">
                 <Button x:Name="dvallejos_add_button"
                         Text="Agregar Persona" 
@@ -63,7 +63,7 @@
                         CornerRadius="5" />
             </StackLayout>
 
-            <!-- Mensaje de estado -->
+            
             <Label x:Name="dvallejos_status_message"
                    Text="{Binding StatusMessage}" 
                    FontSize="14"
@@ -71,7 +71,7 @@
                    HorizontalOptions="Center" 
                    VerticalOptions="EndAndExpand" />
 
-            <!-- ListView -->
+            
             <ListView x:Name="dvallejos_people_list"
                       ItemsSource="{Binding People}" 
                       SelectionMode="Single" 

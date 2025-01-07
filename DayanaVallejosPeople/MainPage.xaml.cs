@@ -16,7 +16,7 @@ public partial class MainPage : ContentPage
         BindingContext = _viewModel;
 
 
-        // Suscribimos eventos al ListView
+        
         dvallejos_people_list.ItemSelected -= OnItemSelected; 
         dvallejos_people_list.ItemSelected += OnItemSelected;
 
@@ -55,10 +55,10 @@ public partial class MainPage : ContentPage
 
             if (confirm)
             {
-                // Ejecutar el comando para eliminar la persona
+                
                 _viewModel.DeletePersonCommand.Execute(person);
 
-                // Mostrar mensaje personalizado
+                
                 await DisplayAlert("Registro eliminado",
                     $"Dayana Vallejos acaba de eliminar un registro.",
                     "OK");
